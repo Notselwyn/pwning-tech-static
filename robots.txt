@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: https://10.10.11.7/sitemap.xml
+Sitemap: https://pwning.tech/sitemap.xml
 Disallow: /ghost/
 Disallow: /p/
 Disallow: /email/
