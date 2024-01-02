@@ -8,13 +8,13 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="preload" as="style" href="/assets/built/screen.css?v=50a5a782cf" />
-    <link rel="preload" as="script" href="/assets/built/casper.js?v=50a5a782cf" />
+    <link rel="preload" as="style" href="/assets/built/screen.css?v=01ef4b6923" />
+    <link rel="preload" as="script" href="/assets/built/casper.js?v=01ef4b6923" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=50a5a782cf" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=01ef4b6923" />
 
-    <link rel="icon" href="https://pwning.tech/content/images/size/w256h256/format/png/2024/01/favicon-1.webp" type="image/png">
-    <link rel="canonical" href="https://pwning.tech/knote/">
+    <link rel="icon" href="https://10.10.11.7/content/images/size/w256h256/format/png/2024/01/favicon-1.webp" type="image/png">
+    <link rel="canonical" href="https://10.10.11.7/knote/">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
     <meta property="og:site_name" content="Pwning Tech">
@@ -29,8 +29,8 @@ Summary
 
  * What are kernel modules?
  * How">
-    <meta property="og:url" content="https://pwning.tech/knote/">
-    <meta property="og:image" content="https://pwning.tech/content/images/2024/01/publication-cover-casper-1k.webp">
+    <meta property="og:url" content="https://10.10.11.7/knote/">
+    <meta property="og:image" content="https://10.10.11.7/content/images/2024/01/publication-cover-casper-1k.webp">
     <meta property="article:published_time" content="2023-01-15T23:21:55.000Z">
     <meta property="article:modified_time" content="2024-01-01T18:39:12.000Z">
     <meta property="article:tag" content="Binary Exploitation">
@@ -51,8 +51,8 @@ Summary
 
  * What are kernel modules?
  * How">
-    <meta name="twitter:url" content="https://pwning.tech/knote/">
-    <meta name="twitter:image" content="https://pwning.tech/content/images/2023/12/logo_twitter_card.webp">
+    <meta name="twitter:url" content="https://10.10.11.7/knote/">
+    <meta name="twitter:image" content="https://10.10.11.7/content/images/2023/12/logo_twitter_card.webp">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="notselwyn">
     <meta name="twitter:label2" content="Filed under">
@@ -68,36 +68,36 @@ Summary
     "publisher": {
         "@type": "Organization",
         "name": "Pwning Tech",
-        "url": "https://pwning.tech/",
+        "url": "https://10.10.11.7/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://pwning.tech/content/images/2024/01/logo_transparent.svg"
+            "url": "https://10.10.11.7/content/images/2024/01/logo_transparent.svg"
         }
     },
     "author": {
         "@type": "Person",
         "name": "notselwyn",
-        "url": "https://pwning.tech/author/notselwyn-2/",
+        "url": "https://10.10.11.7/author/notselwyn-2/",
         "sameAs": []
     },
     "headline": "Knote (HackTheBox)",
-    "url": "https://pwning.tech/knote/",
+    "url": "https://10.10.11.7/knote/",
     "datePublished": "2023-01-15T23:21:55.000Z",
     "dateModified": "2024-01-01T18:39:12.000Z",
     "keywords": "Binary Exploitation, HackTheBox challenges, Linux Syscalls, x64 Assembly, Linux Kernel, Heap Memory",
     "description": "Heya infosec folks, in this write-up we will cover the Knote (kernel-note) kernel-pwn challenge on HackTheBox. We can trigger a local privilege escalation attack by exploiting a use-after-free bug. The description of the challenge is as follows:\n\nSecure your secrets in the kernel space!\n\n\nSummary\n\n * What are kernel modules?\n * How does this kernel CTF work?\n * Analyzing the kmodule\n * Finding primitives\n * Creating an exploit\n * Creating a real world version\n\n\nWhat are kernel modules?\n\nLinux ke",
-    "mainEntityOfPage": "https://pwning.tech/knote/"
+    "mainEntityOfPage": "https://10.10.11.7/knote/"
 }
     </script>
 
     <meta name="generator" content="Ghost 5.75">
-    <link rel="alternate" type="application/rss+xml" title="Pwning Tech" href="https://pwning.tech/rss/">
+    <link rel="alternate" type="application/rss+xml" title="Pwning Tech" href="https://10.10.11.7/rss/">
     
-    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="edf92d97a2ffbb07659fa25625" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://pwning.tech/" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="edf92d97a2ffbb07659fa25625" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://10.10.11.7/" crossorigin="anonymous"></script>
     
-    <link href="https://pwning.tech/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=50a5a782cf"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=50a5a782cf">
+    <link href="https://10.10.11.7/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=01ef4b6923"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=01ef4b6923">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css" integrity="sha512-ML8rkwYTFNcblPFx+VLgFIT2boa6f8DDP6p6go4+FT0/mJ8DCbCgi6S0UdjtzB3hKCr1zhU+YVB0AHhIloZP8Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -198,8 +198,8 @@ Summary
     <header id="gh-head" class="gh-head outer">
         <div class="gh-head-inner inner">
             <div class="gh-head-brand">
-                <a class="gh-head-logo" href="https://pwning.tech">
-                        <img src="https://pwning.tech/content/images/2024/01/logo_transparent.svg" alt="Pwning Tech">
+                <a class="gh-head-logo" href="https://10.10.11.7">
+                        <img src="https://10.10.11.7/content/images/2024/01/logo_transparent.svg" alt="Pwning Tech">
                 </a>
                 <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
                 <button class="gh-burger"></button>
@@ -207,8 +207,8 @@ Summary
 
             <nav class="gh-head-menu">
                 <ul class="nav">
-    <li class="nav-home"><a href="https://pwning.tech/">Home</a></li>
-    <li class="nav-about-me"><a href="https://pwning.tech/about/">About Me</a></li>
+    <li class="nav-home"><a href="https://10.10.11.7/">Home</a></li>
+    <li class="nav-about-me"><a href="https://10.10.11.7/about/">About Me</a></li>
     <li class="nav-twitter"><a href="https://twitter.com/notselwyn/">Twitter</a></li>
     <li class="nav-github"><a href="https://github.com/notselwyn/">Github</a></li>
 </ul>
@@ -606,7 +606,7 @@ module_exit(exit_knote);
     mutex_unlock(&amp;knote_ioctl_lock);
     return 0;
 }
-</code></pre><p>Before we dive into the details, please realize that the kernel heap cache works like a stack containing heap chunk pointers: you push them with kfree and pop them with kmalloc </p><p>It took me a bit of puzzling but I figured out that we can leverage this to trigger a <strong>use-after-free</strong> (UAF) bug. If we create a knote that fails <code>copy_from_user</code> by providing an invalid pointer, the kmodule will <code>kfree(data)</code> and after that it will <code>kfree(knote)</code> but it <strong>wont reset </strong><code>knotes[ku.idx] = NULL</code>. Additionally, the allocation is in the wrong order of <code>kmalloc(data)</code> and then <code>kmalloc(knote)</code>. Because of this, a weird UAF scenario arises in the kernel memory cache where we can overwrite <code>knotes[ku.idx]</code> with userland <code>ku.data</code>. For clarification of this mindboggling bug I have made the following diagram:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://pwning.tech/content/images/2023/01/image-1.png" class="kg-image" alt="" loading="lazy" width="1668" height="317" srcset="https://pwning.tech/content/images/size/w600/2023/01/image-1.png 600w, https://pwning.tech/content/images/size/w1000/2023/01/image-1.png 1000w, https://pwning.tech/content/images/size/w1600/2023/01/image-1.png 1600w, https://pwning.tech/content/images/2023/01/image-1.png 1668w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Description of th UAF bug</span></figcaption></figure><h3 id="finding-a-way-to-hijack-execution-flow">Finding a way to hijack execution flow</h3><p>Now we have a UAF bug, we need to find ways to get code execution by utilizing it. After analyzing more commands, I noted that the <code>KNOTE_ENCRYPT</code> command calls <code>knote-&gt;encrypt_func</code>, stored in the <code>knote</code> structure. </p><figure class="kg-card kg-code-card"><pre><code class="language-c">struct knote {
+</code></pre><p>Before we dive into the details, please realize that the kernel heap cache works like a stack containing heap chunk pointers: you push them with kfree and pop them with kmalloc </p><p>It took me a bit of puzzling but I figured out that we can leverage this to trigger a <strong>use-after-free</strong> (UAF) bug. If we create a knote that fails <code>copy_from_user</code> by providing an invalid pointer, the kmodule will <code>kfree(data)</code> and after that it will <code>kfree(knote)</code> but it <strong>wont reset </strong><code>knotes[ku.idx] = NULL</code>. Additionally, the allocation is in the wrong order of <code>kmalloc(data)</code> and then <code>kmalloc(knote)</code>. Because of this, a weird UAF scenario arises in the kernel memory cache where we can overwrite <code>knotes[ku.idx]</code> with userland <code>ku.data</code>. For clarification of this mindboggling bug I have made the following diagram:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://10.10.11.7/content/images/2023/01/image-1.png" class="kg-image" alt="" loading="lazy" width="1668" height="317" srcset="https://10.10.11.7/content/images/size/w600/2023/01/image-1.png 600w, https://10.10.11.7/content/images/size/w1000/2023/01/image-1.png 1000w, https://10.10.11.7/content/images/size/w1600/2023/01/image-1.png 1600w, https://10.10.11.7/content/images/2023/01/image-1.png 1668w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Description of th UAF bug</span></figcaption></figure><h3 id="finding-a-way-to-hijack-execution-flow">Finding a way to hijack execution flow</h3><p>Now we have a UAF bug, we need to find ways to get code execution by utilizing it. After analyzing more commands, I noted that the <code>KNOTE_ENCRYPT</code> command calls <code>knote-&gt;encrypt_func</code>, stored in the <code>knote</code> structure. </p><figure class="kg-card kg-code-card"><pre><code class="language-c">struct knote {
     char *data;
     size_t len;
     void (*encrypt_func)(char *, size_t);
@@ -1106,7 +1106,7 @@ echo "echo &lt;...&gt; | base64 -d | tar -xzO &gt; exploit" &gt; /dev/stderr
 
 
 ===== TO DECODE =====
-echo &lt;...&gt; | base64 -d | tar -xzO &gt; exploit</code></pre><figcaption><p><span style="white-space: pre-wrap;">Proof-of-concept of </span><code spellcheck="false" style="white-space: pre-wrap;"><span>encode.sh</span></code><span style="white-space: pre-wrap;"> to encode the binary</span></p></figcaption></figure><h2 id="afterword">Afterword</h2><p>I really hope you enjoyed the challenge and write-up as much as I did. Please let me know on <a href="https://twitter.com/notselwyn">Twitter</a> if you want me to make a write-up about exploiting this CTF with <em>real</em> kernel primitives like <code>seq_operations</code> and <code>setxattr</code>. </p><p>If you like this pwn content, please checkout the <a href="https://pwning.tech/blacksmith/">HackTheBox - Blacksmith</a> write-up, or checkout the <a href="https://pwning.tech/tag/heap-memory">Heap Memory</a> and <a href="https://pwning.tech/tag/linux-kernel/">Linux Kernel </a>tag pages on the site to read more kernel related blogposts. </p>
+echo &lt;...&gt; | base64 -d | tar -xzO &gt; exploit</code></pre><figcaption><p><span style="white-space: pre-wrap;">Proof-of-concept of </span><code spellcheck="false" style="white-space: pre-wrap;"><span>encode.sh</span></code><span style="white-space: pre-wrap;"> to encode the binary</span></p></figcaption></figure><h2 id="afterword">Afterword</h2><p>I really hope you enjoyed the challenge and write-up as much as I did. Please let me know on <a href="https://twitter.com/notselwyn">Twitter</a> if you want me to make a write-up about exploiting this CTF with <em>real</em> kernel primitives like <code>seq_operations</code> and <code>setxattr</code>. </p><p>If you like this pwn content, please checkout the <a href="https://10.10.11.7/blacksmith/">HackTheBox - Blacksmith</a> write-up, or checkout the <a href="https://10.10.11.7/tag/heap-memory">Heap Memory</a> and <a href="https://10.10.11.7/tag/linux-kernel/">Linux Kernel </a>tag pages on the site to read more kernel related blogposts. </p>
     </section>
 
 
@@ -1208,7 +1208,7 @@ echo &lt;...&gt; | base64 -d | tar -xzO &gt; exploit</code></pre><figcaption><p>
 
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="https://pwning.tech">Pwning Tech</a> &copy; 2024</section>
+            <section class="copyright"><a href="https://10.10.11.7">Pwning Tech</a> &copy; 2024</section>
             <nav class="site-footer-nav">
                 
             </nav>
@@ -1264,7 +1264,7 @@ echo &lt;...&gt; | base64 -d | tar -xzO &gt; exploit</code></pre><figcaption><p>
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
-<script src="/assets/built/casper.js?v=50a5a782cf"></script>
+<script src="/assets/built/casper.js?v=01ef4b6923"></script>
 <script>
 $(document).ready(function () {
     // Mobile Menu Trigger
