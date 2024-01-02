@@ -1,0 +1,6 @@
+User-agent: *
+Sitemap: https://pwning.tech/sitemap.xml
+Disallow: /ghost/
+Disallow: /p/
+Disallow: /email/
+Disallow: /r/

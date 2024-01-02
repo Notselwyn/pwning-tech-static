@@ -1,0 +1,27 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:notselwyn@pwning.tech
+Expires: 2025-01-01T00:00:00.000Z
+Encryption: https://pwning.tech/pgp-notselwyn-pwning-tech-DE800B06B04C6635.asc
+Preferred-Languages: en
+Canonical: https://pwning.tech/.well-known/security.txt
+Canonical: https://pwning.tech/security.txt
+Policy: https://pwning.tech/about
+-----BEGIN PGP SIGNATURE-----
+
+iQJKBAEBCgA0FiEEvb6KJuMblsm5KTyp3oALBrBMZjUFAmWS6m0WHG5vdHNlbHd5
+bkBwd25pbmcudGVjaAAKCRDegAsGsExmNbFeD/9RuU9WHRkl9PyHTdZmqRAh5+pZ
+Vezgc4Kt0ct2QEwQAItU7zH+MJtgZeAoSY2HvJkagEzSCJr+2Y8zdEmTOT2RPlnM
+ozK6yuI+/8Flu3UzOIvm4jbZ3Gc8Az/ZIhDF6HRHF3RDS/keQ6/ntXbWksAFRbcT
+Nb1X7obF1J75PrDyEtMahPc3X0QLwAZ9qvqOM8y3eI7eiE8tnki3K74+DLi6Z4Os
+BdWwYd5JYC7btP/9tLqm6GNWcNxTYC3cTm8IXYn9E6CNoci9BYh2//l6YY7eL340
+LisU+Ohsh/XcoKcCCdB8Hv9j1VjSrsK8i8KE2vl2xHfBoj401ipuJtbFPQqRFxpy
+1by1U1UCjLnro34/UOMC5KyF5UyHtr/b/Ds0TVot8aubChFzeF0sWSqD9TUK988Q
+ZprwuCZRdEqdSesnH4fbWVl0BNW9ZEr58n21uPnWDctNWW/njawfXTlCFMgdx0Rv
+vzRtxeYX3zqpaDP60CRHYBpOLGEDYQ8XGxfkYj2DRRwMGaEpyIKbOO87g7GrZ7/v
+mAaIIv0vDyhA0lATDA+kWRnpPCQaa+ARQ2Jx5sR8JhVtSM7nx4hXcyejj7sR1Xex
+CKUVSkZkmpVSMT0f6QEb9Ov9a7Ew1hKe0TPdkBG4p2KefcOsc97dYlwQiHHQLgIR
+Dcy87bLR0UKWr+qqSg==
+=rCC1
+-----END PGP SIGNATURE-----

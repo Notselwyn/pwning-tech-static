@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+
+    <title>Pwning Tech</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preload" as="style" href="/assets/built/screen.css?v=8bb51843de" />
+    <link rel="preload" as="script" href="/assets/built/casper.js?v=8bb51843de" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=8bb51843de" />
+
+    <meta name="generator" content="Ghost 5.75">
+    <link rel="alternate" type="application/rss+xml" title="Pwning Tech" href="https://pwning.tech/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="edf92d97a2ffbb07659fa25625" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://pwning.tech/" crossorigin="anonymous"></script>
+    
+    <link href="https://pwning.tech/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=8bb51843de"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=8bb51843de">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css" integrity="sha512-ML8rkwYTFNcblPFx+VLgFIT2boa6f8DDP6p6go4+FT0/mJ8DCbCgi6S0UdjtzB3hKCr1zhU+YVB0AHhIloZP8Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css" integrity="sha512-nXlJLUeqPMp1Q3+Bd8Qds8tXeRVQscMscwysJm821C++9w6WtsFbJjPenZ8cQVMXyqSAismveQJc0C1splFDCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .gh-head-menu .nav-twitter a,
+    .gh-head-menu .nav-github a {
+        font-size: 0 !important;
+    }
+
+    .gh-head-menu .nav-twitter a::before,
+    .gh-head-menu .nav-github a::before {
+        font-family: "Font Awesome 6 Brands";
+        display: inline-block;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        font-smoothing: antialiased;
+    }
+
+    .gh-head-menu .nav-twitter a::before {content: "\f099"}
+    .gh-head-menu .nav-github a::before {content: "\f09b"}
+</style>
+
+<!-- Tocbot Stylesheet -->
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css" />
+
+<!-- Tocbot Inline CSS (Specific Adjustments for the Casper Theme) -->
+<style>
+   
+.gh-content {
+    position: relative;
+ }
+
+.gh-toc > .toc-list {
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
+}
+    
+.toc-list-item a {
+    text-decoration: none;
+}
+    
+.toc-list-item {  
+    list-style: none !important;
+}
+    
+.toc-list {    
+    margin-left: 20px;
+}
+
+@media (min-width: 1300px) {
+     .gh-sidebar {
+        position: absolute; 
+        top: 0;
+        bottom: 0;
+        margin-top: 4vmin;
+		margin-left: 20px;
+        grid-column: 1 / 3;
+    }
+   
+    .gh-toc {
+        position: sticky;
+        top: 4vmin;
+    }
+    
+    /* compensate ToC margin (required for scrolling) */
+    .article-header {
+     	padding-bottom: 10px;   
+    }
+}
+
+.gh-toc .is-active-link::before {
+    background-color: var(--ghost-accent-color);
+}
+</style>
+
+<style>
+	/* fix cover image of blogpost (make it inline with the text) */
+	.gh-canvas .article-image {
+     	grid-column: 3/3;   
+    }
+</style>
+
+<style>
+  /* set font of entire website */
+  body { font-family: @import url(https://fonts.bunny.net/css?family=noto-sans:400,600), sans-serif; }
+  h1 h2 h3 h4 h5 h6 { font-family: @import url(https://fonts.bunny.net/css?family=noto-sans:600), sans-serif; }
+</style><style>:root {--ghost-accent-color: #e01b24;}</style>
+
+</head>
+<body class=" is-head-left-logo has-sans-body has-cover">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head outer">
+        <div class="gh-head-inner inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="">
+                        <img src="https://pwning.tech/content/images/2024/01/logo_transparent.svg" alt="Pwning Tech">
+                </a>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="https://pwning.tech/">Home</a></li>
+    <li class="nav-about-me"><a href="https://pwning.tech/about/">About Me</a></li>
+    <li class="nav-twitter"><a href="https://twitter.com/notselwyn/">Twitter</a></li>
+    <li class="nav-github"><a href="https://github.com/notselwyn/">Github</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="site-content">
+        
+
+<section class="outer error-content">
+    <div class="inner">
+        <section class="error-message">
+            <h1 class="error-code">404</h1>
+            <p class="error-description">Image not found: /2024/01/favicon-1.webp</p>
+            <a class="error-link" href="">Go to the front page →</a>
+        </section>
+    </div>
+</section>
+
+<aside class="read-more-wrap outer">
+    <div class="read-more inner">
+                    
+<article class="post-card post featured no-image">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/ksmbd-syzkaller/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-featured"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.49365 4.58752C3.53115 6.03752 2.74365 7.70002 2.74365 9.25002C2.74365 10.6424 3.29678 11.9778 4.28134 12.9623C5.26591 13.9469 6.60127 14.5 7.99365 14.5C9.38604 14.5 10.7214 13.9469 11.706 12.9623C12.6905 11.9778 13.2437 10.6424 13.2437 9.25002C13.2437 6.00002 10.9937 3.50002 9.16865 1.68127L6.99365 6.25002L4.49365 4.58752Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg> Featured</span>
+                </div>
+                <h2 class="post-card-title">
+                    Tickling ksmbd: fuzzing SMB in the Linux kernel
+                </h2>
+            </header>
+                <div class="post-card-excerpt">Following the adventure of manually discovering network-based vulnerabilities in the Linux kernel, I'm adding ksmbd-fuzzing functionality to the already extensive kernel-fuzzing tool that is Syzkaller.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2023-09-16">Sep 16, 2023</time>
+                <span class="post-card-meta-length">7 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+                    
+<article class="post-card post featured no-image">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/ksmbd/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-featured"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.49365 4.58752C3.53115 6.03752 2.74365 7.70002 2.74365 9.25002C2.74365 10.6424 3.29678 11.9778 4.28134 12.9623C5.26591 13.9469 6.60127 14.5 7.99365 14.5C9.38604 14.5 10.7214 13.9469 11.706 12.9623C12.6905 11.9778 13.2437 10.6424 13.2437 9.25002C13.2437 6.00002 10.9937 3.50002 9.16865 1.68127L6.99365 6.25002L4.49365 4.58752Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg> Featured</span>
+                </div>
+                <h2 class="post-card-title">
+                    Unleashing ksmbd: remote exploitation of the Linux kernel (ZDI-23-979, ZDI-23-980)
+                </h2>
+            </header>
+                <div class="post-card-excerpt">December 22nd 2022: it's Christmas Thursday, one of the last workdays before the Christmas vacation starts. Whilst everyone was looking forward to opening presents from friends and family, the Zero Day Initiative decided to give the IT community a present as well: immense stress in the form of ZDI-22-1690, an</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2023-08-04">Aug 4, 2023</time>
+                <span class="post-card-meta-length">10 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+                    
+<article class="post-card post no-image">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/cve-2022-47758/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                </div>
+                <h2 class="post-card-title">
+                    How I hacked smart lights: the story behind CVE-2022-47758
+                </h2>
+            </header>
+                <div class="post-card-excerpt">In this blogpost, we take a closer look at our research regarding CVE-2022-47758: a critical vulnerability impacting a very large number of Internet of Things smart devices. We could leverage this vulnerability in the lamp's firmware for unauthenticated remote code execution on the entire device with the highest privileges and</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2023-03-08">Mar 8, 2023</time>
+                <span class="post-card-meta-length">16 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+    </div>
+</aside>
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="">Pwning Tech</a> &copy; 2024</section>
+            <nav class="site-footer-nav">
+                
+            </nav>
+            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="/assets/built/casper.js?v=8bb51843de"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha512-AKaNmg8COK0zEbjTdMHJAPJ0z6VeNqvRvH4/d5M4sHJbQQUToMBtodq4HaV4fa+WV2UTfoperElm66c9/8cKmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js" integrity="sha512-8VrjxGFLIkS0mgEmO3p46A5OkqATHhrNVwyv2V7yUeZrk1jmSDuI3SOEpC9XHEHUWEOsfzzcJeBlUkee9lKGrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" integrity="sha512-whYhDwtTmlC/NpZlCr6PSsAaLOrfjVg/iXAnC4H/dtiHawpShhT2SlIMbpIhT/IL/NrpdMm+Hq2C13+VKpHTYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js" integrity="sha512-+8BiRfWso6waiFDv6tEmWF8yfPGgxAtOYLDUB0rRISLwtpxkJ9lpPNUhxwWlikn3qSO+4RQyzDppi62o3ON/AA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js" integrity="sha512-plzrTi61ltEMFf84gTVO9IkvIMfBu07bnDuahvdlIclmFWzXJ9VcRsny9d45sxFZRv3jJg/MHNyuxnUYEMxMEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-http.min.js" integrity="sha512-3KphgbiKTzK2CNxlSgUKypipTV7tWknO5czNb+E7H4CeHOOSer2s2rIOCTuz8NsY1zm+B9tP9Ul2JX/tmdyOYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" integrity="sha512-QXFMVAusM85vUYDaNgcYeU3rzSlc+bTV4JvkfJhjxSHlQEo+ig53BtnGkvFTiNJh8D+wv6uWAQ2vJaVmxe8d3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-diff.min.js" integrity="sha512-tBR4SAva+2bw36ToxaFeOEvgqxWHON25E9xp+kEBfw175sS5OusQEH8GrigKgTdHUXcKsK1yiyfo7fctBYl+rA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-toml.min.js" integrity="sha512-R9JG7uVdcjWlZvEWyP3KfxtexvT1uIlKUF/dYVmZRbvJyMobK6zGCpIM2gLVqYjLSYeL/zBjOVpP7vXxVtzfCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-BttltKXFyWnGZQcRWj6osIg7lbizJchuAMotOkdLxHxwt/Hyo+cl47bZU0QADg+Qt5DJwni3SbYGXeGMB5cBcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $("pre").addClass("line-numbers");
+</script>
+
+<script>
+      $('.gh-content').prepend('<aside class="gh-sidebar"><div class="gh-toc"></div></aside>');
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        tocSelector: '.gh-toc',
+        contentSelector: '.gh-content',
+        headingSelector: 'h1, h2, h3, h4',
+        hasInnerContainers: true,
+  		collapseDepth: 2
+    });
+</script>
+
+<script>
+      $('.gh-toc').prepend('<h5>Table of contents</h5>');
+</script>
+
+<script>
+  $('.gh-burger').attr('aria-label', 'menu button');
+  $('.gh-search').attr('aria-label', 'search button');
+  $(".author-name a").attr("aria-label", "author notselwyn");
+  $(".author-profile-image").attr("aria-label", "author notselwyn");
+</script>
+
+</body>
+</html>
